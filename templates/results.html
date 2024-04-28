@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Result Image</h1>
+    <img src="{{ url_for('static', filename=filename) }}" alt="Changed Outfit"><br>
+    <a href="{{ url_for('home') }}">Try another image</a>
+</body>
+</html>
