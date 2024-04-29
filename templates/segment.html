@@ -6,6 +6,13 @@
 <body>
     <h1>Pick the piece</h1>
     <img src="{{ url_for('static', filename=filename) }}" alt="Changed Outfit"><br>
+    <form action="/submit-your-info" method="post">
+        <label for="num">What piece do you want to change?</label>
+        <input type="text" id="num" name="num" placeholder="0" required><br>
+        <br><label for="name">Enter the different changes you want to see in every image, separating each change with a comma!</label>
+        <br><input type="text" id="name" name="name" placeholder="Enter your changes" required>
+        <input type="submit" value="Submit">
+    </form>
     <a href="{{ url_for('home') }}">Try another image</a>
 </body>
 </html>
