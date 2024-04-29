@@ -3,8 +3,9 @@ import os
 from helper import *
 from PIL import Image
 from numpy import asarray
-import torch
 from matplotlib import pyplot as plt
+
+
 target_width, target_height = 512,512
 app = Flask(__name__)
 
