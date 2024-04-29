@@ -2,12 +2,61 @@
 <html>
 <head>
     <title>Virtual Clothes Changer</title>
+    <style>
+        /* Style for the whole page */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e293b; /* Tailwind bg-neutral-800 */
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            color: white; /* For text color */
+        }
+
+        /* Style for the h1 tag for visibility */
+        h1 {
+            margin-bottom: 16px; /* Spacing under the title */
+        }
+
+        div {
+            display: flex-column;
+        }
+
+        /* Styles for form inputs */
+        input[type="file"] {
+            margin-bottom: 16px;
+            padding: 10px;
+            border: none;
+            background-color: #3b82f6;
+            color: white;
+            cursor: pointer;
+            border-radius: 1rem;
+            
+             /* Spacing for file input */
+        }
+
+        /* Styles for the input button */
+        input[type="submit"] {
+            background-color: #3b82f6; /* Tailwind bg-blue-500 */
+            border-radius: 1rem; /* Rounded-xl */
+            height: 40px; /* h-20 */
+            width: 80px; /* w-20 */
+            cursor: pointer; /* Pointer on hover */
+            border: none; /* No border */
+            color: white; /* Text color */
+            font-size: 16px; /* Font size */
+            padding: 10px; /* Padding inside the button */
+        }
+    </style>
 </head>
 <body>
-    <h1>Upload your image</h1>
-    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" required>
-        <input type="submit" value="Upload">
-    </form>
+    <div>
+        <h1>Upload your image</h1>
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
 </body>
 </html>

@@ -2,16 +2,88 @@
 <html>
 <head>
     <title>What you wanna replace?</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e293b; /* Tailwind bg-neutral-800 */
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            color: white; /* For text color */
+        }
+
+        h1 {
+            margin-bottom: 16px; /* Spacing under the title */
+        }
+
+        .wrapper-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .second-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .third-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+        }
+
+        /* Styles for form inputs */
+        input[type="text"] {
+            margin-bottom: 16px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        image {
+            margin: 16px;
+            padding: 10px;
+            margin-right: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        /* Styles for the input button */
+        input[type="submit"] {
+            background-color: #3b82f6; /* Tailwind bg-blue-500 */
+            border-radius: 1rem; /* Rounded-xl */
+            height: 40px; /* h-20 */
+            width: 100px; /* w-20 */
+            cursor: pointer; /* Pointer on hover */
+            border: none; /* No border */
+            color: white; /* Text color */
+            font-size: 16px; /* Font size */
+            padding: 10px; /* Padding inside the button */
+        }
+    </style>
 </head>
 <body>
-    <h1>Pick the piece</h1>
-    <img src="{{ url_for('static', filename=filename) }}" alt="Changed Outfit"><br>
-    <form action="/submit-your-info" method="post">
-        <label for="num">What piece do you want to change?</label>
-        <input type="text" id="num" name="num" placeholder="0" required><br>
-        <br><label for="name">Enter the different changes you want to see in every image, separating each change with a comma!</label>
-        <br><input type="text" id="name" name="name" placeholder="Enter your changes" required>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="wrapper-div">
+        <h1>Pick the segment</h1>
+        <div class="second-div">
+            <img src="{{ url_for('static', filename=filename) }}" alt="Changed Outfit"><br>
+            <div class="third-div">
+                <form action="/submit-your-info" method="post">
+                    <label for="num">What piece do you want to change?</label>
+                    <input type="text" id="num" name="num" placeholder="0" required><br>
+                    <br><label for="name">Enter the different changes you want to see in every image, separating each change with a comma!</label>
+                    <br><input type="text" id="name" name="name" placeholder="Enter your changes" required>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
